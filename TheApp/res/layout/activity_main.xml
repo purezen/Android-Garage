@@ -7,7 +7,8 @@
         android:id="@+id/add_task"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/button_add_task" />
+        android:text="@string/button_add_task"
+        android:onClick="tryPosting" />
 
     <EditText
         android:id="@+id/text_add_task"
