@@ -1,7 +1,7 @@
 package com.example.theapp;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.TextView;
@@ -13,14 +13,22 @@ public class DisplayTasks extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_display_tasks);
 
-		// Receiving the intent	
-		Intent intent = getIntent();
-		String new_task = intent.getStringExtra(MainActivity.NEW_TASK);
-		
 		// Displaying the added task in the list
+		
+		Cursor cursor = new TaskEntry(this).readDb();
+		
+		cursor.moveToFirst();
+		
+		//long taskID = cursor.getLong(cursor.getColumnIndexOrThrow(TaskEntryDetails._ID));
+		String task_summary = cursor.getString(cursor.getColumnIndexOrThrow(TaskEntryDetails.TASK_SUMMARY));
+		
+		while(cursor.moveToNext()) {
+			task_summary += "\n" + cursor.getString(cursor.getColumnIndexOrThrow(TaskEntryDetails.TASK_SUMMARY));
+		}
+		
 		TextView textView = (TextView)findViewById(R.id.temp_task_list);
 		textView.setTextSize(40);
-		textView.setText(new_task);
+		textView.setText(task_summary);
 		
 	}
 

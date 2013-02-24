@@ -2,17 +2,13 @@ package com.example.theapp;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 
 public class MainActivity extends Activity {
-
-	// Declares the key for the intent extra
-	public final static String NEW_TASK = "com.example.theapp.NEW_TASK";
-		
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -33,12 +29,11 @@ public class MainActivity extends Activity {
 		EditText editText = (EditText) findViewById(R.id.text_add_task);
 		String task = editText.getText().toString();
 		
-		// Using a SharedPreferences file
+		// Putting values in database
 		
-		SharedPreferences sharedPref = this.getPreferences(MODE_PRIVATE);
-		SharedPreferences.Editor editor = sharedPref.edit();
-		editor.putString(NEW_TASK, task);
-		editor.commit();
+		TaskEntry taskEntry = new TaskEntry(this);
+		
+		taskEntry.insertIntoDb(task);
 		
 		// Starting new activity
 		

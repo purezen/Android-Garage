@@ -4,7 +4,11 @@
     android:layout_height="match_parent"
     tools:context=".DisplayTasks" >
 
-    <TextView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        
+        <TextView
         android:id="@+id/temp_task_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,4 +17,6 @@
         android:layout_alignParentTop="true"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    </ScrollView>
+    
 </RelativeLayout>
