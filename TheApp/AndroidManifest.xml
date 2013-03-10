@@ -26,6 +26,10 @@
             android:name="com.example.theapp.DisplayTasks"
             android:label="@string/title_activity_display_tasks" >
         </activity>
+        <activity
+            android:name="com.example.theapp.Task_list"
+            android:label="@string/title_activity_task_list" >
+        </activity>
     </application>
 
 </manifest>

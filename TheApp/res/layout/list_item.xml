@@ -5,10 +5,18 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
+        	android:id="@+id/textView1"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text=""
+        	android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+	<!-- A button that, when pressed, will delete this list item row from its container. -->
+    <ImageButton android:id="@+id/delete_button"
+    		android:layout_width="48dp"
+        	android:layout_height="match_parent"
+        	android:src="@android:drawable/btn_minus"
+        	android:background="?android:selectableItemBackground"
+    		android:contentDescription="Remove item" />
+    	
 </LinearLayout>

@@ -8,5 +8,6 @@
     <string name="default_add_task">Add your new task here..!!</string>
     <string name="tasks_here">Your tasks are here..</string>
     <string name="title_activity_display_tasks">DisplayTasks</string>
+    <string name="title_activity_task_list">Task_list</string>
 
 </resources>

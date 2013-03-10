@@ -5,16 +5,10 @@
     android:orientation="vertical"
     tools:context=".DisplayTasks" >
 
-    <ScrollView
+    <ListView
+        android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-        
-        <TextView
-        android:id="@+id/temp_task_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    </ScrollView>
+        android:layout_height="wrap_content" >
+    </ListView>
     
 </LinearLayout>

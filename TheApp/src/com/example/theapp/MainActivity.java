@@ -23,20 +23,15 @@ public class MainActivity extends Activity {
 	}
 
 	// Pressing the Add New Task button calls this function
-	
 	public void tryPosting(View view) {
-		
 		EditText editText = (EditText) findViewById(R.id.text_add_task);
 		String task = editText.getText().toString();
 		
 		// Putting values in database
-		
 		TaskEntry taskEntry = new TaskEntry(this);
-		
 		taskEntry.insertIntoDb(task);
 		
 		// Starting new activity
-		
 		Intent intent = new Intent(this, DisplayTasks.class);
 		startActivity(intent);
 	}
